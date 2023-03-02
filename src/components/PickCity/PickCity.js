@@ -3,12 +3,13 @@ import TextInput from '../TextInput/TextInput';
 import styles from './PickCity.module.scss';
 import { useState } from 'react';
 
-const PickCity = (action) => {
+const PickCity = (props) => {
   const [city, setCity] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    action(city);
+    props.action(city);
+    setCity('');
   };
 
   return (
