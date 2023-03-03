@@ -30,11 +30,11 @@ const WeatherBox = () => {
         setError(true);
       }
     });
-  });
+  }, []);
 
   return (
     <section>
-      <PickCity action={handleCityChange} />>
+      <PickCity action={handleCityChange} />
       {weather && !pending && <WeatherSummary data={weather} />}
       {pending && !error && <Loader />}
       {error && <ErrorBox />}
